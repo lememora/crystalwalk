@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CrystalWalk</title>
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="dark">
+    <script data-main="scripts/main" src="vendor/require.js"></script>
+    <div class="container-fluid">
+      <section>
+        <div class="row">
+          <div class="col-md-9" id="app-container">
+            <div id="app-renderer-container" style="position: fixed;"></div>
+          </div>
+          <div class="col-md-3 right-panel" id="controls">
+            <header>
+              <div class="row head">
+                <div class="col-md-12 text-center">
+                  <h1><span class="breaking">Cr</span>ystal<span class="breaking">W</span>alk</h1>
+                </div>
+              </div>
+            </header>
+            <section class="menu">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#lattice">Lattice</a>
+                        </h4>
+                      </div>
+                      <div id="lattice">
+                        <div class="panel-body">
+                          <form role="form" action="#">
+                            <div class="form-group">
+                              <label for="bravaisLattice">Bravais Lattice</label>
+                              <select class="form-control" id="bravaisLattice">
+                                <option value="">None</option>
+                                <option value="cubic_primitive">Cubic Primitive</option>
+                                <option value="cubic_body_centered">Cubic Body-centered</option>
+                                <option value="cubic_face_centered">Cubic Face-centered</option>
+                                <option value="tetragonal_primitive">Tetragonal Primitive</option>
+                                <option value="tetragonal_body_centered">Tetragonal Body-centered</option>
+                                <option value="orthorhombic_primitive">Orthorhombic Primitive</option>
+                                <option value="orthorhombic_body_centered">Orthorhombic Body-centered</option>
+                                <option value="orthorhombic_face_centered">Orthorhombic Face-centered</option>
+                                <option value="orthorhombic_base_centered">Orthorhombic Base-centered</option>
+                                <option value="hexagonal_primitive">Hexagonal Primitive</option>
+                                <option value="rhombohedral_primitive">Rhombohedral Primitive</option>
+                                <option value="monoclinic_primitive">Monoclinic Primitive</option>
+                                <option value="monoclinic_base_centered">Monoclinic Base-centered</option>
+                                <option value="triclinic_primitive">Triclinic Primitive</option>
+                              </select>
+                            </div>
+                          </form>
+                          <form role="form" action="#" class="form-horizontal">
+                            <div class="form-group">
+                              <label for="repeatX" class="col-sm-8 control-label">Repeat X</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="repeatX" value="1">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="repeatY" class="col-sm-8 control-label">Y</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="repeatY" value="1">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="repeatZ" class="col-sm-8 control-label">Z</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="repeatZ" value="1">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="scaleX" class="col-sm-8 control-label">Scale A</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="scaleX" value="1.0">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="scaleY" class="col-sm-8 control-label">B</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="scaleY" value="1.0">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="scaleZ" class="col-sm-8 control-label">C</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="scaleZ" value="1.0">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="gamma" class="col-sm-8 control-label">Axial Angle &gamma;</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="gamma" min="60" max="120" step="5" value="90">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="beta" class="col-sm-8 control-label">&beta;</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="beta" min="60" max="120" step="5" value="90">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="alpha" class="col-sm-8 control-label">&alpha;</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="alpha" min="60" max="120" step="5" value="90">
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div><!-- lattice panel -->
+                  </div><!-- accordion -->
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="vendor/jquery.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>
