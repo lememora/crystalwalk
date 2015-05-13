@@ -1,4 +1,4 @@
-Crystal Walk
+CrystalWalk
 ============
 
 ## Setup
